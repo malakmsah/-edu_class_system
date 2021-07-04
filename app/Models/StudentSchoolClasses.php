@@ -19,7 +19,7 @@ class StudentSchoolClasses extends Model
         'school_class_id',
         'first_term_grade',
         'mid_term_grade',
-        'first_term_grade',
+        'final_term_grade',
     ];
 
     /**

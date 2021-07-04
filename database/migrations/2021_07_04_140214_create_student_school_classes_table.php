@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFailedJobsTable extends Migration
+class CreateStudentSchoolClassesTable extends Migration
 {
-    const TABLE_NAME = 'failed_jobs';
+    const TABLE_NAME = 'student_school_classes';
 
     /**
      * Run the migrations.
@@ -18,12 +18,13 @@ class CreateFailedJobsTable extends Migration
         if (!Schema::hasTable(self::TABLE_NAME)) {
             Schema::create(self::TABLE_NAME, function (Blueprint $table) {
                 $table->id();
-                $table->string('uuid')->unique();
-                $table->text('connection');
-                $table->text('queue');
-                $table->longText('payload');
-                $table->longText('exception');
-                $table->timestamp('failed_at')->useCurrent();
+                $table->unsignedBigInteger('student_id');
+                $table->unsignedBigInteger('teacher_id');
+                $table->unsignedBigInteger('school_class_id');
+                $table->integer('first_term_grade');
+                $table->integer('mid_term_grade');
+                $table->integer('final_term_grade');
+                $table->timestamps();
             });
         }
     }
@@ -35,6 +36,6 @@ class CreateFailedJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 }
