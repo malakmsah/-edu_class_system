@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Grade extends Model
+class TeacherSchoolClasses extends Model
 {
-    protected $table = 'grades';
+    protected $table = 'teacher_school_classes';
 
     /**
      * The model's default values for attributes.
@@ -14,6 +14,7 @@ class Grade extends Model
      * @var array
      */
     protected $attributes = [
-        'a' ,
+        'teacher_id',
+        'school_class_id',
     ];
 }

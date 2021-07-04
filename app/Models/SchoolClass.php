@@ -14,6 +14,7 @@ class SchoolClass extends Model
      * @var array
      */
     protected $attributes = [
-        'a' ,
+        'name',
+        'description'
     ];
 }
