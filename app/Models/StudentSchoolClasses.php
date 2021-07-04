@@ -21,4 +21,28 @@ class StudentSchoolClasses extends Model
         'mid_term_grade',
         'first_term_grade',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function schoolClasses()
+    {
+        return $this->hasMany(SchoolClass::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teachers()
+    {
+        return $this->hasMany(Teacher::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

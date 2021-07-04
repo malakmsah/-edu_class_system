@@ -19,4 +19,12 @@ class Teacher extends User
         'email',
         'phone_number',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function schoolClasses()
+    {
+        return $this->hasMany(SchoolClass::class);
+    }
 }

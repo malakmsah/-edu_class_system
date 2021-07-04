@@ -17,4 +17,12 @@ class TeacherSchoolClasses extends Model
         'teacher_id',
         'school_class_id',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teachers()
+    {
+        return $this->hasMany(Teacher::class);
+    }
 }
